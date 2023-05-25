@@ -86,9 +86,11 @@ link: https://github.com/kirankiranbang/nodemoninstallation/commit/b9e5925828541
 
 open new terminal-click on (Debug Console)
 
-now click on run-debugger
+*now click on run-debugger
 
+*click on VIEW-DEBUGCONSOLE
 *take a breakpoint (click it shows like red point on left of code)
+
 *now go to front end and pass any message and click on SubmitEvent
 *now debugger is locked like (shows arrow mark for locked that line)
 *now type any code in (DEBUG CONSOLE)
@@ -97,4 +99,4 @@ now enter
 how it showing it shows
 to QUIT shift+f5
 
-//
+///
