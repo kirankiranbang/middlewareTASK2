@@ -22,7 +22,7 @@ const server = http.createServer((req, res) => {
       const parsedBody = Buffer.concat(body).toString();
       const message = parsedBody.split('=')[1];
 
-      fs.writeFileSync'message.txt', message, (err) => {
+      fs.writeFile('message.txt', message, (err) => {
         if (err) {
           console.error('Failed to save message:', err);
         } else {
@@ -65,4 +65,3 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(4000);
-//
