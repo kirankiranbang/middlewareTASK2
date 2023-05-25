@@ -33,12 +33,7 @@ const server = http.createServer((req, res) => {
         return res.end();
       });
     });
-  } else {
-    res.setHeader('Content-Type', 'text/html');
-    res.write('<html>');
-    res.write('<head><title>First page</title></head>');
-    res.write('<body>');
-    res.write('<h1>Hello from Node.js server</h1>'); // Display the heading
+  } 
     // Read the message from the file
     fs.readFile('message.txt', 'utf-8', (err, message) => {
       if (err) {
@@ -61,7 +56,7 @@ const server = http.createServer((req, res) => {
       res.write('</html>');
       res.end();
     });
-  }
+  
 });
 
 server.listen(4000);
