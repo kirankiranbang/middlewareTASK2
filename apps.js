@@ -1,29 +1,52 @@
+//PS C:\Users\Dell\backend devlopement>npm install --save body-parser
+
+//  const express = require('express');
+// const apps = express();
 
 
+// apps.use(express.urlencoded({ extended: false }));
+
+// apps.use('/add-product', (req, res, next) => {
+  
+//   res.send('<form action="/product" method="post"><input type="text" name="title">input type="text" name="size" placeholder="Product Size"><button type="submit">addproducts</button></form>');
+// });
+
+// apps.use('/product', (req, res, next) => {
+//   console.log(req.body);
+//  res.redirect('/');
+// });
+
+// apps.use('/', (req, res, next) => {
+//   console.log('middleware!');
+//   res.send('<h1>kiran</h1>');
+// });
+
+// apps.listen(4000);
+
+
+///-----------------------------------------------------------------------------------
 
 
 
 const express = require('express');
-const apps=express();
+const apps = express();
 
-apps.use((req,res,next)=>{
-    console.log('middle ware!');
-next();
-})
+const bodyParser = require('body-parser');
+apps.use(bodyParser.urlencoded({ extended:false }));
 
+apps.use('/add-product', (req, res, next) => {
+  
+  res.send('<form action="/product" method="post"><input type="text" name="title"><input type="text" name="size" placeholder="Product Size"><button type="submit">addproducts</button></form>');
+});
 
-apps.use((req,res,next)=>{
-    console.log('another middle ware!');
+apps.use('/product', (req, res, next) => {
+  console.log(req.body);
+ res.redirect('/');
+});
 
-res.send('<h1>hello users from kiran</h1>')
-})
+apps.use('/', (req, res, next) => {
+  console.log('middleware!');
+  res.send('<h1>kiran</h1>');
+});
 
 apps.listen(4000);
-
-// apps.listen(4000, () => {
-//     console.log('Server is listening on port 3000');
-//   });
-
-
-//
-
